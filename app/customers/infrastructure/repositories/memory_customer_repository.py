@@ -4,8 +4,9 @@ from app.customers.domain.repositories.customer_repository import CustomerReposi
 
 class MemoryCustomerRepository(CustomerRepository):
 
-    def get_all(self) -> list[Customer]:
-        return [
+    def __init__(self):
+
+        self.customers = [
             Customer(
                 id=1,
                 name="Juan Pérez",
@@ -22,3 +23,27 @@ class MemoryCustomerRepository(CustomerRepository):
                 email="carlos@example.com",
             ),
         ]
+
+    def get_all(self) -> list[Customer]:
+        return self.customers
+
+    def get_by_email(
+        self,
+        email: str,
+    ) -> Customer | None:
+
+        for customer in self.customers:
+
+            if customer.email == email:
+                return customer
+
+        return None
+
+    def create(
+        self,
+        customer: Customer,
+    ) -> Customer:
+
+        self.customers.append(customer)
+
+        return customer
