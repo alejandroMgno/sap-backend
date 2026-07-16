@@ -1,6 +1,6 @@
 from app.customers.domain.entities.customer import Customer
 from app.customers.domain.repositories.customer_repository import CustomerRepository
-from shared.exceptions import CustomerAlreadyExistsError
+from shared.exceptions.exception import CustomerAlreadyExistsError
 
 
 class CreateCustomerUseCase:
