@@ -39,6 +39,7 @@ class MemoryCustomerRepository(CustomerRepository):
 
         return None
 
+#carga un nuevo cliente en la memoria, asignándole un ID único y agregándolo a la lista de clientes existentes
     def create(
         self,
         customer: Customer,
