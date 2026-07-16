@@ -1,4 +1,4 @@
-from app.domain.repositories.customer_repository import CustomerRepository
+from app.customers.domain.repositories.customer_repository import CustomerRepository
 
 
 class ListCustomersUseCase:

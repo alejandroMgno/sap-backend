@@ -1,7 +1,7 @@
 from fastapi import FastAPI
-from app.presentation.api.home_router import router as home_router
-from app.shared.constats import APP_NAME, APP_VERSION, APP_DESCRIPTION
-from app.presentation.api.customer_router import router as customer_router
+from app.customers.presentation.api.home_router import router as home_router
+from shared.constats import APP_NAME, APP_VERSION, APP_DESCRIPTION
+from app.customers.presentation.api.customer_router import router as customer_router
 
 app = FastAPI(
     title=APP_NAME,

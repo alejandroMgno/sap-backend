@@ -1,5 +1,5 @@
-from app.domain.entities.customer import Customer
-from app.domain.repositories.customer_repository import CustomerRepository
+from app.customers.domain.entities.customer import Customer
+from app.customers.domain.repositories.customer_repository import CustomerRepository
 
 
 class MemoryCustomerRepository(CustomerRepository):
