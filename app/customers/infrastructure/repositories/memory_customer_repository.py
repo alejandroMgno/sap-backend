@@ -42,8 +42,15 @@ class MemoryCustomerRepository(CustomerRepository):
     def create(
         self,
         customer: Customer,
-    ) -> Customer:
+)       -> Customer:
+
+        next_id = max(
+        customer.id
+        for customer in self.customers
+        ) + 1
+
+        customer.id = next_id
 
         self.customers.append(customer)
 
-        return customer
+        return customer 
